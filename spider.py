@@ -6,8 +6,6 @@ import os, time, random
 from contextlib import contextmanager # with statement
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
-from time import sleep
-from random import randint
 
 class NoSuchDriverException(Exception):
     pass
