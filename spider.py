@@ -56,56 +56,5 @@ def main():
             # TODO: log url and sleep time
             print('[Get: %s] - [Sleep: %d]' % (url, interval))
 
-    '''
-    url = 'http://www.yogaoutlet.com'
-
-    driver.get(url)
-
-    li_elems = driver.find_elements_by_class_name('HorizontalList__Item')
-    ret = set()
-    for li_elem in li_elems:
-        try:
-            url = li_elem.find_element_by_tag_name('a').get_attribute('href')
-            if 'collection' in url:
-                ret.add(url)
-        except:
-            pass
-
-    all_urls = set()
-    for module in ret:
-        driver.get(module)
-        while(True):
-            print(driver.current_url)
-            elems = driver.find_elements_by_class_name('ProductItem__ImageWrapper')
-            for elem in elems:
-                try:
-                    link = elem.get_attribute('href')
-                    if link not in all_urls:
-                        all_urls.add(link)
-                except:
-                    pass
-
-            #page
-            try:
-                next_elem = driver.find_element_by_class_name('page-next')
-            except:
-                break
-
-            try:
-                next_elem.click()
-            except:
-                sleep(randint(5, 9))
-                driver.get(driver.current_url)
-                continue
-            url = driver.current_url
-            driver.get(url)
-
-    driver.close()
-
-    with open('result.txt', 'w') as f:
-        for url in all_urls:
-            f.write(url + '\n')
-'''
-
 if __name__ == '__main__':
     main()
