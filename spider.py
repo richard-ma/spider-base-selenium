@@ -53,7 +53,8 @@ def main():
         for url in load_urls_file(urls_filename):
             interval = random_sleep(interval_low_bound, interval_high_bound)
             driver.get(url)
-            print('%s [sleep: %d]' % (url, interval))
+            # TODO: log url and sleep time
+            print('[Get: %s] - [Sleep: %d]' % (url, interval))
 
     '''
     url = 'http://www.yogaoutlet.com'
